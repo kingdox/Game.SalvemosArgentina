@@ -1,12 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using XavHelpTo.Set;
-using XavHelpTo.Change;
 using XavHelpTo;
-using XavHelpTo.Know;
 
 [Serializable]
 public class PlayerUIController

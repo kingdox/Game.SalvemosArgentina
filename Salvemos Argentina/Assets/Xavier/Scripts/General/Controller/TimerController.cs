@@ -1,9 +1,6 @@
 #region Access
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using XavHelpTo;
 using XavHelpTo.Get;
 using XavHelpTo.Know;
 # endregion
@@ -26,11 +23,3 @@ public class TimerController
     }
     #endregion
 }
-
-
-
-//public ref struct Span<T>
-//{
-//    internal ref T _pointer;
-//    private int _length;
-//}
