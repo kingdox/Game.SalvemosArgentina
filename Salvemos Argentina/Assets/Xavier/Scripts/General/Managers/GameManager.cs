@@ -58,6 +58,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ValueController<GameObject> ctrl_PAUSE;
     [SerializeField] private ValueController<GameObject> ctrl_END;
 
+    [Header("Feature")]
+    [Space]
+    [SerializeField] private CommandsController command;
 
     private bool ExistAWinner => PlayerWins || goals[1].Equals(maxGoals);
     private bool PlayerWins => goals[0].Equals(maxGoals);
@@ -68,7 +71,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
+        //Cursor.visible = false;
 
     }
     private void Start()
@@ -81,9 +84,12 @@ public class GameManager : MonoBehaviour
         switch (ctrl_status.Value)
         {
             case Status.GAME:
+                command.CheckUpdate();
                 GameUpdate();
                 break;
             case Status.PAUSE:
+                if (Input.GetKeyDown(KeyCode.Escape)) Pause();
+                command.CheckUpdate();
                 break;
             case Status.END:
                 break;
@@ -125,17 +131,19 @@ public class GameManager : MonoBehaviour
         ctrl_HUD.Value.SetActive(true);
         ctrl_END.Value.SetActive(false);
         ctrl_status.Value = Status.GAME;
-        Cursor.visible = false;
+        //Cursor.visible = false;
         Time.timeScale = 1;
-
     }
-    public void Pause()
-    {
+    public void Pause(){
+        if (ctrl_status.Equals(Status.PAUSE)){
+            Resume();
+            return;
+        }
         ctrl_PAUSE.Value.SetActive(true);
         ctrl_HUD.Value.SetActive(false);
         ctrl_END.Value.SetActive(false);
         ctrl_status.Value = Status.PAUSE;
-        Cursor.visible = true;
+        //Cursor.visible = true;
         Time.timeScale = 0;
     }
     private void GameOver()
@@ -144,7 +152,7 @@ public class GameManager : MonoBehaviour
         ctrl_HUD.Value.SetActive(false);
         ctrl_END.Value.SetActive(true);
         ctrl_status.Value = Status.END;
-        Cursor.visible = true;
+        //Cursor.visible = true;
         Time.timeScale = 0;
     }
     public void GoToMenu() => SceneManager.LoadScene(GameScenes.MENU.ToInt());

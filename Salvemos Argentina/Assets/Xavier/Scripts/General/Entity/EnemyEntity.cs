@@ -24,6 +24,7 @@ public class EnemyEntity : MonoBehaviour
     [SerializeField] private Transform tr_ball; // a apuntar
     [SerializeField] private float speed;
     [SerializeField] private Vector3 posToGo;
+    [SerializeField] private ValueController<ParticleSystem> ctrl_particle_shot;
 
     [Header("Features")]
     [Space]
@@ -75,6 +76,7 @@ public class EnemyEntity : MonoBehaviour
             t.Component(out BallEntity _ball);
             _ball.ApplyForce(transform.position);
             AudioSystem.PlaySound(GeneralSounds.SHOT_BALL);
+            ctrl_particle_shot.Value.Play();
         }
 
     }
