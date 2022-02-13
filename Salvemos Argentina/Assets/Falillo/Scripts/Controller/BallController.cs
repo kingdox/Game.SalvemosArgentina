@@ -18,9 +18,9 @@ public class BallController {
     /// </summary>
     public void ApplyForce(Vector3 shooterPosition) {
         //Con la posici?n del que ha disparado a la bola, calculo el vector hacia donde se deber?a de mover la bola
-        Vector3 forzeDirection = transform.position - shooterPosition;
+        Vector3 forceDirection = transform.position - shooterPosition;
         //Aplico a la velocidad de la bola la direcci?n por la
-        rB.velocity = forzeDirection.normalized * bounceForce;
+        rB.velocity += forceDirection.normalized * bounceForce;
     }
 
     /// <summary>
@@ -28,7 +28,7 @@ public class BallController {
     /// </summary>
     public void ReduceVelocity() {
         if (rB.velocity.magnitude > Vector3.zero.magnitude) {
-            rB.velocity = Vector3.Lerp(rB.velocity,Vector3.zero,friction);
+            rB.velocity = Vector3.Lerp(rB.velocity,Vector3.zero,friction * Time.deltaTime);
         }
     }
 

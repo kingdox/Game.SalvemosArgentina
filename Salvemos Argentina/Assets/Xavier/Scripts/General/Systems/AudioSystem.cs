@@ -102,8 +102,9 @@ public class AudioSystem : MonoBehaviour
     /// </summary>
     public static void PlaySound(GeneralSounds g) => PlaySound(g.ToInt());
     public static void PlaySound(int index) {
-        _.src_generalSound.clip = _.clip_generalSounds[index];
-        _.src_generalSound.Play();
+        //_.src_generalSound.clip = _.clip_generalSounds[index];
+        //_.src_generalSound.Play();
+        _.src_generalSound.PlayOneShot(_.clip_generalSounds[index]);
         //$"Colocar {(GeneralSounds)index} ".Print("red");
     }
     #endregion
@@ -114,7 +115,10 @@ public class AudioSystem : MonoBehaviour
 /// General sounds
 /// </summary>
 public enum GeneralSounds {
-    BUTTON = 0,
-    BACK_BUTTON = 1,
-
+    SHOT_BALL = 0,
+    SHOT = 1,
+    MARADON_1 = 2,
+    MARADON_2 = 3,
+    RELOAD = 4,
+    SHOT_NO_BULLETS = 5,
 }

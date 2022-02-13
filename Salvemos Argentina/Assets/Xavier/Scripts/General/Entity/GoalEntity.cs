@@ -29,12 +29,12 @@ public class GoalEntity : ComponentBase
     #region Methods
     protected override void Suscribe(bool condition)
     {
-        $"{condition}".Print("green");
+        //$"{condition}".Print("green");
     }
 
     private void OnCollisionWithBall(BallEntity ballEntity)
     {
-        if (ctrl_isPlayerGoal.Value) "Gol!!!!".Print(); 
+        //if (ctrl_isPlayerGoal.Value) "Gol!!!!".Print(); 
         //ballEntity.transform.position
         OnEnterGoal?.Invoke(ctrl_isPlayerGoal.Value);
     }

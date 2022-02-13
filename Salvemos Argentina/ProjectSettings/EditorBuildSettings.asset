@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Xavier/Scenes/_Map_Test.unity
+    path: Assets/Falillo/Scenes/MainMenu.unity
+    guid: 1092408fe5ac4184a84a664de0c026b7
+  - enabled: 1
+    path: Assets/Falillo/Scenes/IntroScene.unity
+    guid: ef37e1bd1e885e54f9c1722a2346fe65
+  - enabled: 1
+    path: Assets/Xavier/Scenes/2_Game.unity
     guid: 550f7639c733c40be9f80ab8ddc52cdb
   - enabled: 1
-    path: Assets/Xavier/Scenes/Game.unity
-    guid: c6e084af625db4ed4ab5fb4e5ae9814a
+    path: Assets/Falillo/Scenes/EndScene.unity
+    guid: d5c0796f57d88504f88fd1b81d401e36
   m_configObjects: {}
