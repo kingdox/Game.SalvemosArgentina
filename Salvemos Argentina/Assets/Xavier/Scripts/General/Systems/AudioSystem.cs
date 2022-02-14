@@ -121,4 +121,5 @@ public enum GeneralSounds {
     MARADON_2 = 3,
     RELOAD = 4,
     SHOT_NO_BULLETS = 5,
+    ANGELS = 6
 }

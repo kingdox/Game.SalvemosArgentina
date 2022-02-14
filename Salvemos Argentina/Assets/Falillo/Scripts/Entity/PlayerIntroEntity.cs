@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerIntroEntity : MonoBehaviour {
     [Header("Variable de control")]
     [Space]
-    [SerializeField] private bool enabledControls;
+    public bool enabledControls;
 
     [Header("Variables")]
     [SerializeField] private ValueController<float> ctrl_value_speed;
@@ -17,10 +17,6 @@ public class PlayerIntroEntity : MonoBehaviour {
     [SerializeField] private MouseRotationController ctrl_mouse_rotation;
     [SerializeField] public Interactable interactable;
 
-    private void Update()
-    {
-        if (enabledControls) ctrl_commands.CheckUpdate();
-    }
     private void FixedUpdate() {
         if (enabledControls) {
             ctrl_commands.CheckFixedUpdate();

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 using XavHelpTo;
 using XavHelpTo.Change;
@@ -12,7 +13,8 @@ using XavHelpTo.Get;
 
 public class GameManager : MonoBehaviour
 {
-    private enum GameScenes
+    [Serializable]
+    public enum GameScenes
     {
         MENU=0,
         INTRO=1,

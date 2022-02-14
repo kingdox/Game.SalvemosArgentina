@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: ef37e1bd1e885e54f9c1722a2346fe65
   - enabled: 1
     path: Assets/Xavier/Scenes/2_Game.unity
-    guid: 550f7639c733c40be9f80ab8ddc52cdb
+    guid: fe1541713dec13140bc0f9d1b5c5476d
   - enabled: 1
     path: Assets/Falillo/Scenes/EndScene.unity
     guid: d5c0796f57d88504f88fd1b81d401e36
